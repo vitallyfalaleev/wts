@@ -1,8 +1,8 @@
 <template>
-    <div class="back-ground">
-        <v-container fluid style="height: 100%;" class="first-content">
+    <div class="back-ground" id="FirstScreen" >
+        <v-container fluid style="height: 100%;" class="first-content"  >
             <v-row align="center" justify-lg="start" justify="center" style="height: 100%;">
-                <v-col cols="12" sm="8" lg="5" style="border: 1px solid red" class="text-center text-lg-left">
+                <v-col cols="12" sm="8" lg="5" class="text-center text-lg-left">
                     <img src="../assets/logo-2.svg" alt="WTS">
                     <p>Создание сайтов, лендингов и магазинов под ключ</p>
                     <v-btn rounded color="#BC1111" depressed>Оставить заявку</v-btn>
@@ -15,6 +15,26 @@
 <script>
     export default {
         name: 'FirstScreen',
+        data: () => ({
+            scrollPosition: 0,
+        }),
+        methods: {
+            // handleScroll() {
+            //     var currentScrollPosition = document.scrollingElement.scrollTop;
+            //     if (currentScrollPosition > this.scrollPosition) {
+            //         this.$vuetify.goTo('#BenefitsScreen', {
+            //             duration: 50,
+            //             easing: 'easeInOutQuint'
+            //         })
+            //         console.log("Scrolling down", this.scrollPosition);
+            //     }
+            //     this.scrollPosition = currentScrollPosition;
+            // }
+        },
+        // mounted() {
+        //     window.addEventListener('scroll', this.handleScroll)
+        // }
+
     }
 </script>
 <style lang="sass">

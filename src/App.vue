@@ -22,6 +22,17 @@
           </v-btn>
         </v-col>
       </v-row>
+      <v-list dense dark>
+        <v-list-item @click="$vuetify.goTo('#BenefitsScreen', {
+          duration: 1000,
+          easing: 'easeInOutQuint'
+        })">
+          1
+        </v-list-item>
+        <v-list-item>
+          1
+        </v-list-item>
+      </v-list>
     </v-navigation-drawer>
 
     <v-content>
