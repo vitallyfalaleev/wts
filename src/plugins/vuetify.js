@@ -15,12 +15,4 @@ export default new Vuetify({
             },
         },
     },
-    breakpoint: {
-        thresholds: {
-            xs: 320,
-            sm: 540,
-            md: 768,
-            lg: 1440,
-        },
-    },
 });

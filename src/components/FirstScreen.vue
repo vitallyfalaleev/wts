@@ -5,11 +5,11 @@
                 <v-col cols="12" sm="8" lg="5" class="text-center text-lg-left">
                     <img src="../assets/logo-2.svg" alt="WTS">
                     <p>Создание сайтов, лендингов и магазинов под ключ</p>
-                    <v-btn rounded color="#BC1111" depressed>Оставить заявку</v-btn>
+                    <v-btn rounded :small="$vuetify.breakpoint.xs" :large="$vuetify.breakpoint.sm"  color="#BC1111" depressed>Оставить заявку</v-btn>
                 </v-col>
             </v-row>
         </v-container>
-        <img class="scrolling_icon" src="../assets/scroll_icon.svg" alt="">
+        <img class="scrolling_icon d-none d-lg-block" src="../assets/scroll_icon.svg" alt="scroll">
     </div>
 </template>
 <script>
@@ -31,13 +31,10 @@
             //     this.scrollPosition = currentScrollPosition;
             // }
         },
-        // mounted() {
-        //     window.addEventListener('scroll', this.handleScroll)
-        // }
-
     }
 </script>
 <style lang="sass">
+    @import '~vuetify/src/styles/settings/_variables'
     .back-ground
         width: 100%
         height: 100vh
@@ -76,7 +73,7 @@
                 padding-bottom: 42px
                 line-height: 1
                 font-family: Ubuntu
-        @media screen and (max-width: 1439px)
+        @media #{map-get($display-breakpoints, 'md-and-down')}
             &::before
                 content: url("../assets/bubbles-5.svg")
                 width: 506px
@@ -89,31 +86,35 @@
                 height: 631px
                 top: auto
                 bottom: -90px
-            .scrolling_icon
-                display: none
             .first-content
                 padding-left: 15px
                 p
                     font-size: 1.8rem
                     padding-top: 23px
                     padding-bottom: 29px
-        @media screen and (max-width: 767px)
+        @media #{map-get($display-breakpoints, 'sm-and-down')}
             &::before
-                content: url("../assets/bubbles-6.svg")
+                content: ''
+                background-image: url("../assets/bubbles-6.svg")
+                background-size: 60%
+                background-repeat: no-repeat
                 width: 305px
                 height: 305px
                 top: 101px
-                left: -166px
+                left: -100px
             &::after
-                content: url("../assets/bubbles-3.svg")
+                content: ''
+                background-image: url("../assets/bubbles-3.svg")
+                background-repeat: no-repeat
                 width: 203px
                 height: 381px
                 bottom: -83px
+        @media #{map-get($display-breakpoints, 'xs-only')}
             .first-content
-                padding-left: 0
                 img
                     max-width: 81px
                 p
                     font-size: 1rem
                     padding-bottom: 16px
+
 </style>

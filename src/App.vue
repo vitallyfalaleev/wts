@@ -3,9 +3,11 @@
     <v-navigation-drawer app
                          fixed
                          permanent
+                         :mini-variant="drawer"
+                         :mini-variant-width="74"
                          class="drawer_bg"
                          :width="drawerWidth"
-                         light
+                         dark
     >
       <v-row>
         <v-col cols="12"  class="text-center">
@@ -17,20 +19,29 @@
         </v-col>
 
         <v-col cols="12"  class="text-center">
-          <v-btn text dark block :ripple="false">
+          <v-btn text dark block @click.stop="drawer = !drawer" :ripple="false">
             <v-img :max-width="burger.width" src="./assets/burger.svg"></v-img>
           </v-btn>
         </v-col>
       </v-row>
       <v-list dense dark>
-        <v-list-item @click="$vuetify.goTo('#BenefitsScreen', {
+        <v-list-item @click.stop="$vuetify.goTo('#BenefitsScreen', {
           duration: 1000,
           easing: 'easeInOutQuint'
         })">
-          1
+          Преимущества
         </v-list-item>
-        <v-list-item>
-          1
+        <v-list-item @click.stop="$vuetify.goTo('#ServicesScreen', {
+          duration: 1000,
+          easing: 'easeInOutQuint'
+        })">
+          Услуги
+        </v-list-item>
+        <v-list-item @click.stop="$vuetify.goTo('#PortfolioScreen', {
+          duration: 1000,
+          easing: 'easeInOutQuint'
+        })">
+          Портфолио
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
@@ -56,7 +67,8 @@ export default {
     },
     burger: {
       width: 36
-    }
+    },
+    drawer: true
   }),
   created() {
     window.addEventListener('resize', this.handleResize)
@@ -71,12 +83,12 @@ export default {
       this.drawerWatcher()
     },
     drawerWatcher(){
-      if(this.windowWidth <= 767){
+      if(this.windowWidth <= this.$vuetify.breakpoint.thresholds.xs){
         this.drawerWidth = 48
         this.logo.width = 33
         this.logo.heigth = 45
         this.burger.width = 17
-      } else if(this.windowWidth >= 768 && this.windowWidth <= 1439) {
+      } else if(this.windowWidth <= this.$vuetify.breakpoint.thresholds.sm) {
         this.drawerWidth = 74
         this.logo.width = 59
         this.logo.heigth = 75
