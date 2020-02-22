@@ -82,13 +82,12 @@
             font-weight: 400
             position: relative
             span
-                position: relative
-                display: block
+                margin-left: -30px
                 &::before
                     content: url("../assets/line.svg")
-                    position: absolute
-                    left: -39px
-                    top: -6px
+                    position: relative
+                    top: -10px
+
         .BenefitsScreen-block
             z-index: 100
             position: relative
@@ -134,10 +133,6 @@
                 content: url("../assets/icon-3.svg")
             h2
                 font-size: 1rem
-                margin-bottom: 10px
-            span
-                &::before
-                    content: url("../assets/line-1.svg")
             .BenefitsScreen-block
                 h3
                     font-size: .9rem

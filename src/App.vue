@@ -43,6 +43,12 @@
         })">
           Портфолио
         </v-list-item>
+        <v-list-item @click.stop="$vuetify.goTo('#OurTeamScreen', {
+          duration: 1000,
+          easing: 'easeInOutQuint'
+        })">
+          Команда
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
 

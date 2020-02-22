@@ -4,6 +4,7 @@
     <benefits-screen />
     <services-screen />
     <portfolio-screen />
+    <our-team-screen />
   </div>
 </template>
 
@@ -13,6 +14,7 @@ import FirstScreen from "../components/FirstScreen";
 import BenefitsScreen from "../components/BenefitsScreen";
 import ServicesScreen from "../components/ServicesScreen";
 import PortfolioScreen from "../components/PortfolioScreen";
+import OurTeamScreen from "../components/OurTeamScreen";
 export default {
   name: 'Home',
   data: () => ({
@@ -22,6 +24,7 @@ export default {
     BenefitsScreen,
     ServicesScreen,
     PortfolioScreen,
+    OurTeamScreen,
   },
   methods: {
     onSlideChangeStart (currentPage) {

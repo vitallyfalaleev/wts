@@ -23,7 +23,7 @@
             </div>
             <v-row>
                 <v-col class="text-center all_works">
-                    <v-btn rounded color="#BC1111" depressed large>Посмотреть все работы</v-btn>
+                    <v-btn rounded color="#BC1111" depressed :x-small="$vuetify.breakpoint.xsOnly" :large="$vuetify.breakpoint.smAndUp">Посмотреть все работы</v-btn>
                 </v-col>
             </v-row>
         </v-container>
@@ -195,4 +195,10 @@
                     font-size: 1.6rem
                 p
                     font-size: .9rem
+            .all_works
+                button
+                    &:after
+                        content: url("../assets/btn-1.svg")
+                        position: absolute
+                        z-index: -1
 </style>
